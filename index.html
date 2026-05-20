@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10th Anniversary & June Happiness | 9Sense dining</title>
+  
+  <!-- OGP設定（SNSでシェアされた時に綺麗に表示されるための設定） -->
+  <meta property="og:title" content="10th Anniversary & June Happiness 特別ディナー | 9Sense dining">
+  <meta property="og:description" content="10年の感謝を込めて贈る、初夏の特別な夜。6月週末限定のフルコースをご予約いただけます。">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1544148103-0773bf10d330?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:url" content="">
+  <meta property="og:type" content="website">
+
+  <!-- Tailwind CSS & Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Noto Serif JP', serif; }
+    .font-sans { font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+    .fade-in { animation: fadeIn 0.8s ease-in-out; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="text-stone-800 antialiased selection:bg-stone-200 bg-[#f9f8f6]">
+
+  <!-- Header -->
+  <header id="header" class="fixed w-full top-0 z-40 transition-all duration-300 bg-transparent py-5">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+      <div class="flex flex-col items-start">
+        <h1 id="header-title" class="tracking-widest text-2xl text-white transition-colors duration-300">9Sense dining</h1>
+        <span id="header-sub" class="text-xs tracking-widest text-white/80 transition-colors duration-300">10th Anniversary & June Happiness</span>
+      </div>
+      <button onclick="scrollToReservation()" id="header-btn" class="hidden md:block px-6 py-2 rounded-none transition-colors duration-300 border tracking-widest border-white text-white hover:bg-white hover:text-stone-800">
+        予約する
+      </button>
+    </div>
+  </header>
+
+  <div id="step-0">
+    <!-- Hero -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img src="https://images.unsplash.com/photo-1544148103-0773bf10d330?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Special Dinner Course" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-black/40"></div>
+      </div>
+      <div class="relative z-10 text-center text-white px-4 mt-16 fade-in">
+        <p class="text-sm md:text-base tracking-[0.2em] mb-4 text-stone-200">10th Anniversary & June Happiness</p>
+        <h2 class="text-4xl md:text-6xl mb-6 tracking-widest leading-tight">
+          10年の感謝を込めて贈る、<br class="md:hidden" />初夏の特別な夜。
+        </h2>
+        <p class="text-base md:text-lg font-light tracking-widest mb-10 leading-relaxed font-sans">
+          6月 週末限定開催<br/>
+          お一人様 ¥8,800 (税込)
+        </p>
+        <button onclick="scrollToReservation()" class="bg-white text-stone-800 px-10 py-4 text-lg tracking-widest hover:bg-stone-100 transition-all duration-300">特別ディナーを予約する</button>
+      </div>
+    </section>
+
+    <!-- Concept -->
+    <section class="py-24 px-4 bg-white">
+      <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-12">
+        <div class="flex-1 text-center md:text-left fade-in">
+          <h3 class="text-3xl mb-6 tracking-widest text-stone-800">10th Anniversary</h3>
+          <p class="text-stone-600 leading-loose tracking-wide font-light text-sm md:text-base">
+            今年、9Sense diningは皆様に支えられ、<br class="hidden md:block" />
+            10周年という大きな節目を迎えます。<br /><br />
+            女性が幸せを確信する6月「June Happiness」。<br />
+            この特別な月と10周年の感謝が重なる奇跡のタイミングに、<br />
+            ドロフィーズキャンパスの静寂の空間で、<br />
+            大切な方との幸せな時間を彩る<br />
+            この時期だけのアニバーサリーフルコースをお楽しみください。
+          </p>
+        </div>
+        <div class="flex-1 w-full fade-in">
+          <img src="https://images.unsplash.com/photo-1596484552834-6a58f850d0d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Restaurant Interior" class="w-full h-auto object-cover shadow-lg" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu Gallery -->
+    <section class="py-20 bg-stone-50 border-t border-stone-200">
+      <div class="container mx-auto px-4 max-w-5xl">
+        <div class="text-center mb-16 fade-in">
+          <h3 class="text-3xl text-stone-800 tracking-widest mb-3">Special Course</h3>
+          <p class="text-stone-500 text-sm tracking-wider font-sans">¥8,800 (税込)</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
+          <div class="space-y-4 fade-in">
+            <img src="https://images.unsplash.com/photo-1515443961809-f4ffd4ea8539?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Antipasto" class="w-full aspect-[4/3] object-cover" />
+            <div>
+              <span class="text-[10px] text-stone-400 uppercase tracking-widest font-sans">Antipasto Misto</span>
+              <h4 class="text-lg text-stone-800 mb-1">初夏の彩り前菜盛り合わせ</h4>
+              <p class="text-xs text-stone-500 leading-relaxed font-sans">NOVEのカプレーゼ / 至福の和風ビーフパテ / スモークドカナール ブラッドオレンジソース / ガーリックシュリンプ カクテルソース / ムール貝のエスカベッシュ</p>
+            </div>
+          </div>
+          <div class="space-y-4 md:mt-16 fade-in">
+            <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Pasta" class="w-full aspect-[4/3] object-cover" />
+            <div>
+              <span class="text-[10px] text-stone-400 uppercase tracking-widest font-sans">Primo Piatto</span>
+              <h4 class="text-lg text-stone-800 mb-1">ヘーゼルナッツとプロシュートのピエモンテ風パスタ</h4>
+            </div>
+          </div>
+          <div class="space-y-4 fade-in">
+            <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Fish" class="w-full aspect-[4/3] object-cover" />
+            <div>
+              <span class="text-[10px] text-stone-400 uppercase tracking-widest font-sans">Pesca</span>
+              <h4 class="text-lg text-stone-800 mb-1">アトランティックサーモンとクルベットムースのポワレ</h4>
+              <p class="text-xs text-stone-500 leading-relaxed font-sans">フレンチバルサミコソース ハーブサラダ添え</p>
+            </div>
+          </div>
+          <div class="space-y-4 md:mt-16 fade-in">
+            <img src="https://images.unsplash.com/photo-1544025162-83569dd7348f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Meat" class="w-full aspect-[4/3] object-cover" />
+            <div>
+              <span class="text-[10px] text-stone-400 uppercase tracking-widest font-sans">Carne</span>
+              <h4 class="text-lg text-stone-800 mb-1">和牛ロースとフォアグラのロティ</h4>
+              <p class="text-xs text-stone-500 leading-relaxed font-sans">滋味あふれる茸のポルトソース</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mt-16 max-w-2xl mx-auto space-y-4 text-center fade-in">
+           <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dessert" class="w-full aspect-[16/9] object-cover" />
+           <div>
+              <span class="text-[10px] text-stone-400 uppercase tracking-widest font-sans">Dolce Miste</span>
+              <h4 class="text-lg text-stone-800 mb-1">イタリアン チョコレートプリン ＜ボネ＞<br/>ガトー カトル フロマージュ ハニークリーム</h4>
+              <p class="text-xs text-stone-500 leading-relaxed mt-2 font-sans">食後に自家焙煎オーガニックコーヒー または 北欧紅茶をご用意しております。</p>
+            </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Reservation Form Section -->
+  <section id="reservation-section" class="py-20 bg-white border-t border-stone-200">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl text-stone-800 tracking-widest mb-3">Reservation</h2>
+        <p class="text-stone-500 text-sm tracking-wider font-sans">ご予約</p>
+      </div>
+
+      <div class="bg-[#f9f8f6] p-6 md:p-10 shadow-sm border border-stone-200">
+        
+        <!-- Step 1: フォーム -->
+        <div id="step-1" class="fade-in">
+          <div class="bg-white p-5 mb-8 border border-stone-200 text-center">
+            <span class="text-xs text-stone-500 tracking-widest block mb-1 font-sans">選択中のコース</span>
+            <p class="text-lg text-stone-800">June Happiness Special course dinner</p>
+            <p class="text-stone-600">¥8,800 <span class="text-xs font-sans">(税込)</span></p>
+          </div>
+
+          <form id="reservation-form" class="space-y-8">
+            <!-- 日時・人数 -->
+            <div>
+              <h3 class="text-lg text-stone-800 mb-4 flex items-center border-b border-stone-200 pb-2">日時と人数</h3>
+              <div class="space-y-4">
+                <div>
+                  <label class="block text-sm text-stone-600 mb-2">ご来店日 (6月週末限定) <span class="text-red-500">*</span></label>
+                  <select name="date" class="w-full p-3 border border-stone-300 focus:border-stone-800 outline-none appearance-none bg-white font-sans text-stone-800" required>
+                    <option value="">選択してください</option>
+                    <option value="2026-06-13">6月13日(土)</option>
+                    <option value="2026-06-14">6月14日(日)</option>
+                    <option value="2026-06-20">6月20日(土)</option>
+                    <option value="2026-06-21">6月21日(日)</option>
+                    <option value="2026-06-27">6月27日(土)</option>
+                    <option value="2026-06-28">6月28日(日)</option>
+                  </select>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-sm text-stone-600 mb-2">お時間 <span class="text-red-500">*</span></label>
+                    <select name="time" class="w-full p-3 border border-stone-300 focus:border-stone-800 outline-none appearance-none bg-white font-sans text-stone-800" required>
+                      <option value="">選択</option>
+                      <option value="17:30">17:30</option>
+                      <option value="18:00">18:00</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-sm text-stone-600 mb-2">大人 <span class="text-red-500">*</span></label>
+                    <select name="adults" class="w-full p-3 border border-stone-300 focus:border-stone-800 outline-none appearance-none bg-white font-sans text-stone-800" required>
+                      <option value="1">1名様</option>
+                      <option value="2" selected>2名様</option>
+                      <option value="3">3名様</option>
+                      <option value="4">4名様</option>
+                      <option value="5">5名様</option>
+                      <option value="6">6名様</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="block text-sm text-stone-600 mb-2">お子様 (小学生以下)</label>
+                    <select id="children-select" name="children" class="w-full p-3 border border-stone-300 focus:border-stone-800 outline-none appearance-none bg-white font-sans text-stone-800">
+                      <option value="0">0名様</option>
+                      <option value="1">1名様</option>
+                      <option value="2">2名様</option>
+                      <option value="3">3名様</option>
+                      <option value="4">4名様</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- お子様情報 -->
+                <div id="child-fields" class="hidden bg-stone-50 p-5 border border-stone-200 mt-2 space-y-4 fade-in">
+                  <p class="text-sm font-bold text-stone-800 mb-2">お子様についてお聞かせください</p>
+                  <div>
+                    <label class="block text-sm text-stone-600 mb-1">お子様の年齢 <span class="text-red-500">*</span></label>
+                    <input type="text" id="childAges" name="childAges" placeholder="例: 3歳、5歳" class="w-full p-3 border border-stone-300 focus:border-stone-800 outline-none bg-white text-sm font-sans" />
+                  </div>
+                  <div>
+                    <label class="block text-sm text-stone-600 mb-1">お子様のお食事 <span class="text-red-500">*</span></label>
+                    <select id="childMeal" name="childMeal" class="w-full p-3 border border-stone-300 focus:border-stone-800 outline-none appearance-none bg-white text-sm font-sans text-stone-800">
+                      <option value="">選択してください</option>
+                      <option value="特別コースを注文する (大人と同内容)">特別コースを注文する (大人と同内容)</option>
+                      <option value="食事なし (取り分け)">食事なし (取り分け)</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="block text-sm text-stone-600 mb-1">ベビーチェアのご利用</label>
+                    <select name="babyChairs" class="w-full p-3 border border-stone-300 focus:border-stone-800 outline-none appearance-none bg-white text-sm font-sans text-stone-800">
+                      <option value="0">不要</option>
+                      <option value="1">1脚 必要</option>
+                      <option value="2">2脚 必要</option>
+                    </select>
+                    <p class="text-[10px] text-stone-500 mt-2 leading-relaxed font-sans">※数には限りがございます。ご用意できない場合は店舗よりご連絡いたします。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- お客様情報 -->
+            <div>
+              <h3 class="text-lg text-stone-800 mb-4 flex items-center border-b border-stone-200 pb-2">お客様情報</h3>
+              <div class="space-y-4">
+                <div>
+                  <label class="block text-sm text-stone-600 mb-2">お名前 <span class="text-red-500">*</span></label>
+                  <input type="text" name="name" class="w-full p-3 border border-stone-300 focus:border-stone-800 outline-none bg-white" required />
+                </div>
+                <div>
+                  <label class="block text-sm text-stone-600 mb-2">お電話番号 <span class="text-red-500">*</span></label>
+                  <input type="tel" name="phone" class="w-full p-3 border border-stone-300 focus:border-stone-800 outline-none bg-white font-sans" required />
+                </div>
+                <div>
+                  <label class="block text-sm text-stone-600 mb-2">メールアドレス <span class="text-red-500">*</span></label>
+                  <input type="email" name="email" class="w-full p-3 border border-stone-300 focus:border-stone-800 outline-none bg-white font-sans" required />
+                </div>
+                <div>
+                  <label class="block text-sm text-stone-600 mb-2">アレルギー・その他ご要望</label>
+                  <textarea name="allergies" rows="3" class="w-full p-3 border border-stone-300 focus:border-stone-800 outline-none bg-white resize-none" placeholder="例：甲殻類アレルギーが1名います"></textarea>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-10">
+              <button type="submit" id="submit-btn" class="w-full bg-stone-800 text-white px-8 py-4 tracking-widest hover:bg-stone-700 transition-colors font-medium text-lg disabled:bg-stone-400">
+                予約をリクエストする
+              </button>
+              <div id="error-message" class="hidden mt-4 text-center text-sm text-red-500 font-sans">
+                通信エラーが発生しました。時間を置いて再度お試しください。
+              </div>
+              <p class="mt-4 text-center text-xs text-stone-500 font-sans">
+                ※送信後、店舗からの「予約完了メール」をもってご予約確定となります。
+              </p>
+            </div>
+          </form>
+        </div>
+
+        <!-- Step 2: 完了画面 -->
+        <div id="step-2" class="hidden text-center py-10 fade-in">
+          <div class="w-16 h-16 rounded-full bg-stone-800 text-white flex items-center justify-center mx-auto mb-6">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+          </div>
+          <h3 class="text-2xl text-stone-800 mb-4 tracking-widest">ご予約リクエストを承りました</h3>
+          <p class="text-stone-600 mb-8 leading-relaxed text-sm font-sans">
+            この度は特別なディナーへのご予約リクエスト、誠にありがとうございます。<br /><br />
+            現在、店舗にて空席状況を確認しております。<br />
+            <strong class="text-stone-800">店舗からの「予約確定メール」または「ご案内メール」の到着をお待ちください。</strong><br />
+            （ご入力いただいたメールアドレス宛に、受付確認の自動返信メールを送信しております）
+          </p>
+          <button onclick="location.reload()" class="text-stone-500 hover:text-stone-800 text-sm border-b border-stone-300 pb-1">トップページへ戻る</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-stone-900 text-stone-400 py-12 text-center text-sm font-sans">
+    <p class="tracking-widest mb-2 font-serif text-stone-300">9Sense dining</p>
+    <p class="text-xs">&copy; 2026 DloFres. All Rights Reserved.</p>
+  </footer>
+
+  <!-- フローティングボタン (モバイル用) -->
+  <div class="md:hidden fixed bottom-0 left-0 w-full p-4 bg-white/90 backdrop-blur border-t border-stone-100 z-30">
+    <button onclick="scrollToReservation()" class="w-full bg-stone-800 text-white py-4 font-medium tracking-widest shadow-lg">
+      予約へ進む
+    </button>
+  </div>
+
+  <script>
+    // ★★★ここにMission 1で取得したURLを貼り付けます★★★
+    const GAS_URL = "★ここにURLを貼り付けます★";
+
+    // スクロール時のヘッダー色変更
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('header');
+      const title = document.getElementById('header-title');
+      const sub = document.getElementById('header-sub');
+      const btn = document.getElementById('header-btn');
+      
+      if (window.scrollY > 50) {
+        header.classList.add('bg-white/95', 'backdrop-blur-sm', 'shadow-sm');
+        header.classList.remove('bg-transparent', 'py-5');
+        header.classList.add('py-3');
+        title.classList.replace('text-white', 'text-stone-800');
+        sub.classList.replace('text-white/80', 'text-stone-500');
+        btn.classList.replace('border-white', 'border-stone-800');
+        btn.classList.replace('text-white', 'text-stone-800');
+        btn.classList.add('hover:bg-stone-800', 'hover:text-white');
+        btn.classList.remove('hover:bg-white', 'hover:text-stone-800');
+      } else {
+        header.classList.remove('bg-white/95', 'backdrop-blur-sm', 'shadow-sm', 'py-3');
+        header.classList.add('bg-transparent', 'py-5');
+        title.classList.replace('text-stone-800', 'text-white');
+        sub.classList.replace('text-stone-500', 'text-white/80');
+        btn.classList.replace('border-stone-800', 'border-white');
+        btn.classList.replace('text-stone-800', 'text-white');
+        btn.classList.add('hover:bg-white', 'hover:text-stone-800');
+        btn.classList.remove('hover:bg-stone-800', 'hover:text-white');
+      }
+    });
+
+    // 予約セクションへスクロール
+    function scrollToReservation() {
+      document.getElementById('reservation-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // お子様情報の表示切り替え
+    const childrenSelect = document.getElementById('children-select');
+    const childFields = document.getElementById('child-fields');
+    const childAges = document.getElementById('childAges');
+    const childMeal = document.getElementById('childMeal');
+
+    childrenSelect.addEventListener('change', (e) => {
+      if (parseInt(e.target.value) > 0) {
+        childFields.classList.remove('hidden');
+        childAges.setAttribute('required', 'required');
+        childMeal.setAttribute('required', 'required');
+      } else {
+        childFields.classList.add('hidden');
+        childAges.removeAttribute('required');
+        childMeal.removeAttribute('required');
+        childAges.value = '';
+        childMeal.value = '';
+      }
+    });
+
+    // フォーム送信処理
+    const form = document.getElementById('reservation-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const errorMessage = document.getElementById('error-message');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      if (GAS_URL === "https://script.google.com/macros/s/AKfycby22bLo2t8RNhfIl07BoFWzxj8_vu27_H3nbpYE5AV3aCFYbS_zBmOI0wxmhABhxJsTpw/exec" || GAS_URL === "") {
+        alert("システムエラー：GASのURLが設定されていません。コードの223行目を確認してください。");
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.innerText = "送信中...";
+      errorMessage.classList.add('hidden');
+
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+
+      try {
+        const response = await fetch(GAS_URL, {
+          method: 'POST',
+          body: JSON.stringify(data),
+          headers: {
+            'Content-Type': 'text/plain;charset=utf-8',
+          }
+        });
+
+        // 送信成功時：完了画面へ切り替え
+        document.getElementById('step-1').classList.add('hidden');
+        document.getElementById('step-2').classList.remove('hidden');
+        window.scrollTo({ top: document.getElementById('reservation-section').offsetTop - 80, behavior: 'smooth' });
+
+      } catch (error) {
+        // エラー時：ボタンを戻す
+        console.error('Error:', error);
+        errorMessage.classList.remove('hidden');
+        submitBtn.disabled = false;
+        submitBtn.innerText = "予約をリクエストする";
+      }
+    });
+  </script>
+</body>
+</html>
