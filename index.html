@@ -251,7 +251,6 @@
                 予約をリクエストする
               </button>
               
-              <!-- ★エラー内容を表示する赤枠を追加しました★ -->
               <div id="error-message" class="hidden mt-6 bg-red-50 border border-red-200 p-4 text-left text-sm text-red-700 font-sans shadow-sm">
                 <p class="font-bold mb-1">通信エラーが発生しました</p>
                 <p id="error-detail" class="text-xs"></p>
@@ -297,7 +296,7 @@
   <script>
     // ★★★ここにMission 1で取得したURLを貼り付けます★★★
     // （※URLの最初から最後まで、1文字も漏らさずにコピペしてください！）
-    const GAS_URL = "https://script.google.com/macros/s/AKfycby22bLo2t8RNhfIl07BoFWzxj8_vu27_H3nbpYE5AV3aCFYbS_zBmOI0wxmhABhxJsTpw/exec";
+    const GAS_URL = "★ここにURLを貼り付けます★";
 
     window.addEventListener('scroll', () => {
       const header = document.getElementById('header');
@@ -358,7 +357,7 @@
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       
-      if (GAS_URL === "https://script.google.com/macros/s/AKfycby22bLo2t8RNhfIl07BoFWzxj8_vu27_H3nbpYE5AV3aCFYbS_zBmOI0wxmhABhxJsTpw/exec" || GAS_URL === "") {
+      if (GAS_URL === "★ここにURLを貼り付けます★" || GAS_URL === "") {
         alert("システムエラー：GASのURLが設定されていません。コードの238行目を確認してください。");
         return;
       }
@@ -379,12 +378,10 @@
           }
         });
 
-        // ★エラーを厳密にチェックする処理に変更しました★
         if (!response.ok) {
           throw new Error(`送信先が見つかりません (HTTPエラーコード: ${response.status})`);
         }
 
-        // GASからの返答をチェック
         let result;
         try {
           result = await response.json();
@@ -396,7 +393,6 @@
           throw new Error(`GAS内部エラー: ${result.message}`);
         }
 
-        // ここまで来て初めて完了画面へ！
         document.getElementById('step-1').classList.add('hidden');
         document.getElementById('step-2').classList.remove('hidden');
         window.scrollTo({ top: document.getElementById('reservation-section').offsetTop - 80, behavior: 'smooth' });
